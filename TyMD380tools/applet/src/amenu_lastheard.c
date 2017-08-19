@@ -1,0 +1,322 @@
+// File:    md380tools/applet/src/amenu_codeplug.c
+// Author:  Wolf (DL4YHF) [initial version]
+//
+// Date:    2017-04-29
+//  Highly experimental 'alternative zone list' and similar codeplug-related displays.
+//  Most list-like displays are implemented as a callback function 
+//  for the 'application menu' (app_menu.c) .
+
+#include "config.h"
+
+
+#include <stm32f4xx.h>
+#include <string.h>
+#include "irq_handlers.h"
+#include "lcd_driver.h"
+#include "app_menu.h" // 'simple' alternative menu activated by red BACK-button
+#include "printf.h"
+#include "spiflash.h" // md380_spiflash_read()
+#include "codeplug.h" // codeplug memory addresses, struct- and array-sizes
+#include "usersdb.h"
+#include "amenu_lastheard.h" // header for THIS module (to check prototypes,etc)
+#include "gfx.h"
+#include "blacklist.h"
+#include "amenu_set_tg.h"
+
+uint8_t lhSize = 0;
+uint8_t lhRBufIndex = 0;
+
+#define MAX_LASTHEARD_ENTRIES 20
+
+lastheard_user lhdir[MAX_LASTHEARD_ENTRIES];
+
+lastheard_user selUser;
+
+int am_cbk_Lastheard_BlockUser(app_menu_t *pMenu, menu_item_t *pItem, int event, int param)
+{ // Simple example for a 'user screen' opened from the application menu
+	if (event == APPMENU_EVT_ENTER) // pressed ENTER (to launch the colour test) ?
+	{
+		blockID(selUser.src);
+		return AM_RESULT_OK; // screen now 'occupied' by the colour test screen
+	}
+	return AM_RESULT_NONE; // "proceed as if there was NO callback function"
+} // end am_cbk_ColorTest()
+
+int am_cbk_Lastheard_PrivCall(app_menu_t *pMenu, menu_item_t *pItem, int event, int param)
+{ // Simple example for a 'user screen' opened from the application menu
+	if (event == APPMENU_EVT_ENTER) // pressed ENTER (to launch the colour test) ?
+	{
+		ad_hoc_talkgroup = selUser.src;
+		ad_hoc_tg_channel = channel_num;
+		ad_hoc_call_type = CONTACT_USER;
+		CheckTalkgroupAfterChannelSwitch();
+		return AM_RESULT_OK; // screen now 'occupied' by the colour test screen
+	}
+	return AM_RESULT_NONE; // "proceed as if there was NO callback function"
+} // end am_cbk_ColorTest()
+
+
+
+menu_item_t am_Lastheard_Options[] = // setup menu, nesting level 1 ...
+{ // { "Text__max__13", data_type,  options,opt_value,
+  //     pvValue,iMinValue,iMaxValue, string table, callback }
+
+
+  // { "Text__max__13", data_type,  options,opt_value,
+  //    pvValue,iMinValue,iMaxValue,           string table, callback }
+	{ "[-]",             DTYPE_STRING, APPMENU_OPT_NONE,0,
+	selUser.name,0,0,          NULL,         NULL },
+
+	{ "Call:",             DTYPE_STRING, APPMENU_OPT_NONE,0,
+	selUser.callsign,0,0,          NULL,         NULL },
+
+	{ "ID:",             DTYPE_INTEGER, APPMENU_OPT_NONE,0,
+	&selUser.src,0,0,          NULL,         NULL },
+
+	{ "TG:",             DTYPE_INTEGER, APPMENU_OPT_NONE,0,
+	&selUser.dst,0,0,          NULL,         NULL },
+
+	{ "Time:",             DTYPE_STRING, APPMENU_OPT_NONE,0,
+	selUser.timestamp ,0,0,          NULL,         NULL },
+
+	{ "[-]Private Call",       DTYPE_NONE, APPMENU_OPT_BACK,0,
+	NULL,0,0,                  NULL,  am_cbk_Lastheard_PrivCall },
+
+	{ "Ignore",       DTYPE_NONE, APPMENU_OPT_BACK,0,
+	NULL,0,0,                  NULL,  am_cbk_Lastheard_BlockUser },
+
+	{ "[-]Back",       DTYPE_NONE, APPMENU_OPT_BACK,0,
+	NULL,0,0,                  NULL,  NULL },
+
+	// End of the list marked by "all zeroes" :
+	{ NULL, 0/*dt*/, 0/*opt*/, 0/*ov*/, NULL/*pValue*/, 0,0, NULL, NULL }
+
+}; // end am_Setup[]
+
+void LHList_AddEntry(uint32_t src, uint32_t dst) 
+{
+	for (int i = 0; i < MAX_LASTHEARD_ENTRIES-1; i++) {
+		memcpy(&lhdir[MAX_LASTHEARD_ENTRIES-i-1], &lhdir[MAX_LASTHEARD_ENTRIES-i-2], sizeof(lastheard_user));
+	}
+	user_t dbEntry;
+	if (usr_find_by_dmrid(&dbEntry, src) == 0) {
+		return;
+	}
+
+	lastheard_user* lh = &lhdir[0];
+	lh->src = src;
+	lh->dst = dst;
+	get_RTC_time(lh->timestamp);
+	strcpy(lh->name, dbEntry.name);
+	strcpy(lh->callsign, dbEntry.callsign);
+
+
+	if (lhSize < MAX_LASTHEARD_ENTRIES && lhRBufIndex < MAX_LASTHEARD_ENTRIES) {
+
+		lhRBufIndex++;
+		lhSize++;
+	}
+}
+
+  //---------------------------------------------------------------------------
+static void Lastheard_OnEnter(app_menu_t *pMenu, menu_item_t *pItem)
+// Called ONCE when "entering" the 'Zone List' display.
+// Tries to find out how many zones exist in the codeplug,
+// and the array-index of the currently active zone . 
+{
+	scroll_list_control_t *pSL = &pMenu->scroll_list;
+
+	ScrollList_Init(pSL); // set all struct members to defaults
+	//pSL->current_item = 0; // currently active zone still unknown
+	
+	//contactIndex = 0;
+
+	pSL->num_items = (lhSize < MAX_LASTHEARD_ENTRIES ? lhSize : MAX_LASTHEARD_ENTRIES);
+	pSL->focused_item = 0;
+	//ContactsList_Recache(pMenu);
+	
+
+	pSL->num_items = lhSize;
+
+	// Begin navigating through the list at the currently active zone:
+	if (pSL->focused_item > pSL->num_items)
+	{
+		pSL->focused_item = 0;
+	}
+
+} // end ZoneList_OnEnter()
+
+  //---------------------------------------------------------------------------
+static void Lastheard_Draw(app_menu_t *pMenu, menu_item_t *pItem)
+// Draws the 'zone list' screen. Gets visible when ENTERING that item in the app-menu.
+// 
+{
+	int i, n_visible_items, sel_flags = SEL_FLAG_NONE;
+	lcd_context_t dc;
+	char cRadio; // character code for a selected or unselected "radio button"
+	scroll_list_control_t *pSL = &pMenu->scroll_list;
+
+	lastheard_user* lhUser;
+
+	pSL->num_items = (lhSize < MAX_LASTHEARD_ENTRIES ? lhSize : MAX_LASTHEARD_ENTRIES);
+
+	// Draw the COMPLETE screen, without clearing it initially to avoid flicker
+	LCD_InitContext(&dc); // init context for 'full screen', no clipping
+	Menu_GetColours(sel_flags, &dc.fg_color, &dc.bg_color);
+	ScrollList_AutoScroll(pSL); // modify pSL->scroll_pos to make the FOCUSED item visible
+	dc.font = LCD_OPT_FONT_16x16;
+	//LCD_HorzLine(dc.x1, dc.y++, dc.x2, dc.bg_color);
+	//LCD_HorzLine(dc.x1, dc.y++, dc.x2, dc.bg_color);
+	{
+		LCD_Printf(&dc, " LH  %d/%d\r", (int)((pSL->focused_item + 1)), (int)pSL->num_items);
+	}
+	LCD_HorzLine(dc.x1, dc.y++, dc.x2, dc.fg_color); // spacer between title and scrolling list
+	LCD_HorzLine(dc.x1, dc.y++, dc.x2, dc.bg_color);
+	//i = pSL->scroll_pos;   // zero-based array index of the topmost VISIBLE item
+	n_visible_items = 0;   // find out how many items fit on the screen
+
+	//i = (lhSize%MAX_LASTHEARD_ENTRIES < lhRBufIndex ? lhRBufIndex : 0);
+	//i = 0;
+	//int rBuf = lhRBufIndex-1;
+	/*if (lhRBufIndex == 0) {
+		i = MAX_LASTHEARD_ENTRIES - 1;
+		rBuf = lhRBufIndex;
+	}*/
+
+	//char dir = 0;
+	for(i=pSL->scroll_pos; i<pSL->num_items && (dc.y < (LCD_SCREEN_HEIGHT - 8)); i++)
+	//while ((dc.y < (LCD_SCREEN_HEIGHT - 8)) && i < pSL->num_items && i<MAX_LASTHEARD_ENTRIES)
+	{
+		if (i > MAX_LASTHEARD_ENTRIES) {
+			break;
+		}
+		
+
+		lhUser = &lhdir[i];
+
+		if (i == pSL->focused_item) // this is the CURRENTLY ACTIVE zone :
+		{
+			cRadio = 0x1A;  // character code for a 'selected radio button', see applet/src/font_8_8.c 
+			sel_flags = SEL_FLAG_FOCUSED;
+		}
+		else
+		{
+			cRadio = 0xF9;
+			sel_flags = SEL_FLAG_NONE;
+		}
+
+	
+		Menu_GetColours(sel_flags, &dc.fg_color, &dc.bg_color);
+		dc.x = 0;
+		dc.font = LCD_OPT_FONT_8x16;
+		
+		LCD_Printf(&dc, " %c ", cRadio); // 16*16 pixels for a circle, not a crumpled egg
+		dc.font = LCD_OPT_FONT_8x16;
+		LCD_Printf(&dc, "%s - %d\r", lhUser->callsign, lhUser->dst); // '\r' clears to the end of the line, '\n' doesn't
+
+		n_visible_items++;
+	}
+
+	// If necessary, fill the rest of the screen (at the bottom) with the background colour:
+	Menu_GetColours(SEL_FLAG_NONE, &dc.fg_color, &dc.bg_color);
+	LCD_FillRect(0, dc.y, LCD_SCREEN_WIDTH - 1, LCD_SCREEN_HEIGHT - 1, dc.bg_color);
+	pMenu->redraw = FALSE;    // "done" (screen has been redrawn).. except:
+	if (n_visible_items > pSL->n_visible_items) // more items visible than initially assumed ?
+	{
+		pSL->n_visible_items = n_visible_items;   // adapt parameters for the scrollbar,
+		pMenu->redraw = ScrollList_AutoScroll(pSL); // and redraw everything (KISS)
+	}
+} // ZoneList_Draw()
+
+
+  //---------------------------------------------------------------------------
+int am_cbk_LastheardList(app_menu_t *pMenu, menu_item_t *pItem, int event, int param)
+// Callback function, invoked from the "app menu" framework for the 'ZONES' list.
+// (lists ALL ZONES, not THE CHANNELS in a zone)
+{
+	scroll_list_control_t *pSL = &pMenu->scroll_list;
+
+	// what happened, why did the menu framework call us ?
+	if (event == APPMENU_EVT_ENTER) // pressed ENTER (to enter the 'Zone List') ?
+	{
+		Lastheard_OnEnter(pMenu, pItem);
+		return AM_RESULT_OCCUPY_SCREEN; // occupy the entire screen (not just a single line)
+	}
+	else if (event == APPMENU_EVT_PAINT) // someone wants us to paint into the framebuffer
+	{ // To minimize QRM from the display cable, only redraw when necessary (no "dynamic" content here):
+		//if (pMenu->visible == APPMENU_USERSCREEN_VISIBLE) // only if HexMon already 'occupied' the screen !
+		{
+			if (pMenu->redraw)
+			{
+				pMenu->redraw = FALSE;   // don't modify this sequence
+				Lastheard_Draw(pMenu, pItem); // <- may decide to draw AGAIN (scroll)
+			}
+			return AM_RESULT_OCCUPY_SCREEN; // keep the screen 'occupied' 
+		}
+	}
+	else if (event == APPMENU_EVT_KEY) // some other key pressed while focused..
+	{
+		switch ((char)param) // here: message parameter = keyboard code (ASCII)
+		{
+		case 'M':  // green "Menu" key : kind of ENTER. But here, "apply & return" .
+			if (pSL->focused_item >= 0)
+			{
+				//ContactList_SetZoneByIndex(pSL->focused_item);
+				//contactIndex = pSL->focused_item;
+				//fIsTG = (selContact.type == 0xC1 ? 1 : 0);
+				memcpy(&selUser, &lhdir[pSL->focused_item], sizeof(lastheard_user));
+				//usr_find_by_dmrid(&selUser.dbEntry, selUser.src);
+				Menu_EnterSubmenu(pMenu, am_Lastheard_Options);
+
+				// The above command switched to the new zone, and probably set
+				// channel_num = 0 to 'politely ask' the original firmware to 
+				// reload whever is necessary from the codeplug (SPI-Flash). 
+				// It's unknown when exactly that happens (possibly in another task). 
+				// To update the CHANNEL NAME from the *new* zone in our menu, 
+				// let a few hundred milliseconds pass before redrawing the screen:
+				StartStopwatch(&pMenu->stopwatch_late_redraw);
+			}
+			return AM_RESULT_EXIT_AND_RELEASE_SCREEN;
+		case 'B':  // red "Back"-key : return from this screen, discard changes.
+			return AM_RESULT_EXIT_AND_RELEASE_SCREEN;
+		case 'U':  // cursor UP
+			if (pSL->focused_item > 0)
+			{
+				--pSL->focused_item;
+			}
+			else {
+				pSL->focused_item = pSL->num_items - 1;
+			}
+			//contactIndex = pSL->focused_item;
+			//ContactsList_Recache(pMenu);
+			break;
+		case 'D':  // cursor DOWN
+			if (pSL->focused_item < (pSL->num_items - 1))
+			{
+				++pSL->focused_item;
+			}
+			else if (pSL->focused_item >= (pSL->num_items - 1)) {
+				pSL->focused_item = 0;
+
+			}
+			
+			//contactIndex = pSL->focused_item;
+			//ContactsList_Recache(pMenu);
+			break;
+		default:    // Other keys .. editing or treat as a hotkey ?
+			break;
+		} // end switch < key >
+		pMenu->redraw = TRUE;
+
+	} // end if < keyboard event >
+	if (pMenu->visible == APPMENU_USERSCREEN_VISIBLE) // only if HexMon already 'occupied' the screen !
+	{
+		return AM_RESULT_OCCUPY_SCREEN; // keep the screen 'occupied' 
+	}
+	else
+	{
+		return AM_RESULT_NONE; // "proceed as if there was NO callback function"
+	}
+} // end am_cbk_ZoneList()
+
+
