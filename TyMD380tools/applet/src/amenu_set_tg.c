@@ -84,11 +84,10 @@ int am_cbk_SetCallType(app_menu_t *pMenu, menu_item_t *pItem, int event, int par
 	case APPMENU_EVT_END_EDIT: // the operator finished or aborted editing,
 		if (param) // "finished", not "aborted" -> write back the new ("edited") value
 		{
-			ad_hoc_call_type = pMenu->iEditValue;
-
-			ad_hoc_talkgroup = current_TG();
+			ad_hoc_call_type = (pMenu->iEditValue == 0 ? CONTACT_USER : CONTACT_GROUP);
 			ad_hoc_tg_channel = channel_num;
-			CheckTalkgroupAfterChannelSwitch(); // ad_hoc_talkgroup -> contact.xyz
+			CheckTalkgroupAfterChannelSwitch();
+
 		} // end if < FINISHED (not ABORTED) editing >
 		return AM_RESULT_OK; // "event was processed HERE"
 	default: // all other events are not handled here (let the sender handle them)
