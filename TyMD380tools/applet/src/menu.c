@@ -1890,7 +1890,8 @@ void create_menu_entry_set_tg_screen(void)
    //current_tg = (current_tg<<8) + (int) contact.id_l;
    current_tg = rst_dst;
 
-   nchars = uli2w(current_tg, md380_menu_edit_buf);
+   //nchars = uli2w(current_tg, md380_menu_edit_buf);
+   nchars = 0;
 #if 0
     printf("\ncreate_menu_entry_set_tg_screen %x %d \n", md380_menu_edit_buf, nchars);
     printhex2((char *) md380_menu_edit_buf, 14);
