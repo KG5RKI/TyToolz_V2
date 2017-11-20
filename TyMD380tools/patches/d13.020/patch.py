@@ -26,8 +26,8 @@ if __name__ == '__main__':
     #patcher.sethword(0x08012912, 0x2804)
     #patcher.sethword(0x0801290A, 0x221C)
 	
-	
-	
+    #remove power on password bullshit
+    patcher.sethword(0x08013AA6, 0xbdf7);
 
     patcher.nopout((0x08033f30 + 0x18))
     patcher.nopout((0x08033f30 + 0x1a))
