@@ -413,8 +413,18 @@ void draw_rx_screen(unsigned int bg_color)
 	}
 	y_index += GFX_FONT_SMALL_HEIGHT;
 
-	gfx_select_font(gfx_font_norm); // switch to large font
-	gfx_printf_pos2(RX_POPUP_X_START, y_index, 10, "%s %s", usr.callsign, usr.firstname);
+	//If user is admin/cool
+	if (usr.fUserType) {
+		gfx_set_fg_color(0x0808b2);
+		gfx_select_font(gfx_font_norm); // switch to large font
+		gfx_printf_pos2(RX_POPUP_X_START, y_index, 10, "[ %s ] ", usr.callsign);
+		gfx_set_fg_color(0x000000);
+	}
+	else {
+		gfx_select_font(gfx_font_norm); // switch to large font
+		gfx_printf_pos2(RX_POPUP_X_START, y_index, 10, "%s %s", usr.callsign, usr.firstname);
+	}
+	
 	y_index += GFX_FONT_NORML_HEIGHT;
 
 	if (global_addl_config.userscsv > 1 && talkerAlias.length > 0) {		// 2017-02-19 show Talker Alias depending on setup 0=CPS 1=DB 2=TA 3=TA & DB

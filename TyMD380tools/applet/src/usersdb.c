@@ -177,12 +177,19 @@ void usr_splitbuffer(user_t *up)
             cp++ ;
         }
         
-        switch(fld) {
-            case 0 :
-                up->id = start ;
-                break ;
-            case 1 :
-                up->callsign = start ;
+		switch (fld) {
+		case 0:
+			up->id = start;
+			break;
+		case 1:
+				if (start[0] == '|') {
+					up->callsign = start+1;
+					up->fUserType = 1;
+				}
+				else {
+					up->callsign = start;
+					up->fUserType = 0;
+				}
                 break ;
             case 2 :
                 up->name = start ;
