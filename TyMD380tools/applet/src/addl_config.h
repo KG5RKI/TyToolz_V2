@@ -54,7 +54,13 @@ typedef struct addl_config {
 	uint16_t fg_color_lh;  // foreground (text) colour for LH screens
 	uint16_t bg_color_lh;  // normal background colour for LH screens
 	uint8_t alt_text; //alternate text colors
+	uint8_t display_options;
 } addl_config_t ;
+
+enum DisplayConfig
+{
+	ShowLabelTG = 1
+};
 
 #define CPO_BL1 0x1
 #define CPO_BL2 0x2
@@ -68,5 +74,6 @@ void cfg_fix_radioname();
 void cfg_set_radio_name();
 
 void cfg_save();
+int cfg_tst_display_flag(addl_config_t* cfg, char flg);
 
 #endif

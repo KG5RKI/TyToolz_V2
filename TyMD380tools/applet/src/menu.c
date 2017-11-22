@@ -48,10 +48,14 @@ const static wchar_t wt_demoscr_disable[]   = L"Disable";
 const static wchar_t wt_splash[]            = L"Splash Mode";
 
 const static wchar_t wt_showcall[]          = L"Show Calls";      // was UsersCSV / enable / disable now added Talker Alias
-const static wchar_t wt_fromcps[]            = L"CPS only";
+const static wchar_t wt_fromcps[]           = L"CPS only";
 const static wchar_t wt_usercsv[]           = L"User DB";
 const static wchar_t wt_talkalias[]         = L"Talk Alias";
 const static wchar_t wt_ta_user[]           = L"TA & UserDB";
+
+const static wchar_t wt_tg_display[]        = L"TG Display";      
+const static wchar_t wt_from_userdb[]       = L"From UserDB";
+const static wchar_t wt_number_only[]       = L"Number Only";
 
 const static wchar_t wt_datef_original[]    = L"YYYY/MM/DD";
 const static wchar_t wt_datef_germany[]     = L"DD.MM.YYYY";
@@ -808,6 +812,24 @@ void create_menu_entry_showcall_ta_user_screen(void)
 }
 
 //==========================================================================================================//
+// submenu: TG display - select options for what to display on screen for current TG (name from userdb, or just ID num)
+//==========================================================================================================//
+
+void create_menu_entry_tg_display_userdb_screen(void)
+{
+	mn_create_single_timed_ack(wt_tg_display, wt_from_userdb);
+	global_addl_config.display_options |= (ShowLabelTG);
+	cfg_save();
+}
+
+void create_menu_entry_tg_display_number_screen(void)
+{
+	mn_create_single_timed_ack(wt_tg_display, wt_number_only);
+	global_addl_config.display_options &= ~(ShowLabelTG);
+	cfg_save();
+}
+
+//==========================================================================================================//
 
 void create_menu_entry_experimental_enable_screen(void)
 {
@@ -930,6 +952,24 @@ void create_menu_entry_showcall_screen(void)
     
     mn_submenu_finalize();
 }
+
+//==========================================================================================================//
+// main(?) menu: tg_display - configure how current talkgroup is displayed on screen
+//==========================================================================================================//
+
+void create_menu_entry_tg_display_screen(void)
+{
+	mn_submenu_init(wt_tg_display);
+
+	md380_menu_entry_selected = (cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG) ? 0 : 1);
+
+	mn_submenu_add(wt_from_userdb, create_menu_entry_tg_display_userdb_screen);
+	mn_submenu_add(wt_number_only, create_menu_entry_tg_display_number_screen);
+
+	mn_submenu_finalize();
+}
+
+
 
 void create_menu_entry_debug_screen(void)
 {
@@ -1985,6 +2025,7 @@ void create_menu_entry_addl_functions_screen(void)
     mn_submenu_add(wt_bootopts, create_menu_entry_bootopts_screen);
     mn_submenu_add_98(wt_datef, create_menu_entry_datef_screen);
     mn_submenu_add_98(wt_showcall, create_menu_entry_showcall_screen);
+	mn_submenu_add_98(wt_tg_display, create_menu_entry_tg_display_screen);
     //mn_submenu_add_98(wt_debug, create_menu_entry_debug_screen);
     mn_submenu_add_98(wt_promtg, create_menu_entry_promtg_screen);
     mn_submenu_add_8a(wt_edit, create_menu_entry_edit_screen, 0); // disable this menu entry - no function jet

@@ -64,7 +64,7 @@ int cfg_load()
         return 0;        
     }
     
-    if( calc_crc(&tmp,tmp.length) != 0 ) {
+    if( calc_crc(&tmp, sizeof(addl_config_t)) != 0 ) {
         // corrupted.
         LOGB("cfg crc fail\n");
         return 0;
@@ -107,6 +107,7 @@ int cfg_load()
 
 	if(tmp.length != sizeof(addl_config_t)){
 		global_addl_config.mic_gain = 0;
+		global_addl_config.display_options |= ShowLabelTG;
 		return 0;
 	}
 
@@ -121,6 +122,10 @@ void cfg_save()
     global_addl_config.crc = calc_crc(&global_addl_config,sizeof(addl_config_t));
     
     cfg_write_struct( &global_addl_config );
+}
+
+int cfg_tst_display_flag(addl_config_t* cfg, char flg) {
+	return cfg->display_options & flg != 0;
 }
 
 void cfg_set_radio_name()
@@ -154,6 +159,7 @@ void init_global_addl_config_hook(void)
 		global_addl_config.edit_bg_color = 0x9;
 		global_addl_config.mic_gain = 0;
 		global_addl_config.alt_text = 0;
+		global_addl_config.display_options |= ShowLabelTG;
 	}
 
 //#ifdef CONFIG_MENU

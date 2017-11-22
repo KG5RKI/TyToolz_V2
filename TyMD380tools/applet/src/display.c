@@ -664,19 +664,19 @@ void draw_alt_statusline()
 	} else {										// 2017-02-18 otherwise show lastheard in status line
 			
 	        if( usr_find_by_dmrid(&usr, src) == 0 ) {
-				if (usr_find_by_dmrid(&usr2, rst_dst) == 0) {
-					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%d->%d %c %s", src, rst_dst, mode, (isBlackListed(src)?"-Ignore":" "));
+				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
+					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%d->%s %c %s", src, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
 				else {
-					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%d->%s %c %s", src, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
+					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%d->%d %c %s", src, rst_dst, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
         	} else {
         	    
-				if (usr_find_by_dmrid(&usr2, rst_dst) == 0) {
-					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%s->%d %c %s", usr.callsign, rst_dst, mode, (isBlackListed(src) ? "-Ignore" : " "));
+				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
+					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%s->%s %c %s", usr.callsign, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
 				else {
-					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%s->%s %c %s", usr.callsign, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
+					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%s->%d %c %s", usr.callsign, rst_dst, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
 	        }	
 	}
@@ -708,14 +708,15 @@ void draw_adhoc_statusline()
 		int tgNum = (ad_hoc_tg_channel ? ad_hoc_talkgroup : current_TG());
 		int callType = (ad_hoc_tg_channel ? ad_hoc_call_type : contact.type);
 		user_t usr;
-		if (usr_find_by_dmrid(&usr, tgNum) == 0) {
+		if (usr_find_by_dmrid(&usr, tgNum) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
 			//gfx_printf_pos2(x, y, 320, "%s - %d", (ad_hoc_call_type == CONTACT_GROUP ? "TG" : "Priv"), ad_hoc_talkgroup);
-			gfx_printf_pos2(x, y, 120, "%s%s %d", (ad_hoc_tg_channel ? "AdHoc: " : ""), (callType == CONTACT_GROUP || callType == CONTACT_GROUP2 ? "TG" : "Priv"), tgNum);
-
+			
+			gfx_printf_pos2(x, y, 120, "%s%s", (ad_hoc_tg_channel ? "AdHoc-" : ""), usr.callsign);
+			
 		}
 		else {
 			//gfx_printf_pos2(x, y, 320, "%s - %s", (ad_hoc_call_type == CONTACT_GROUP ? "TG" : "Priv"), usr.callsign);
-			gfx_printf_pos2(x, y, 120, "%s%s %s", (ad_hoc_tg_channel ? "AdHoc: " : ""), (callType == CONTACT_GROUP || callType == CONTACT_GROUP2 ? "TG" : "Priv"), usr.callsign);
+			gfx_printf_pos2(x, y, 120, "%s%s %d", (ad_hoc_tg_channel ? "AdHoc: " : ""), (callType == CONTACT_GROUP || callType == CONTACT_GROUP2 ? "TG" : "Priv"), tgNum);
 		}
 
 	} //If current channel is analog
