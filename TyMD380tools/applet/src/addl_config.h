@@ -55,6 +55,7 @@ typedef struct addl_config {
 	uint16_t bg_color_lh;  // normal background colour for LH screens
 	uint8_t alt_text; //alternate text colors
 	uint8_t display_options;
+	uint8_t audio_leveling; // automatic receive audio leveling
 } addl_config_t ;
 
 enum DisplayConfig

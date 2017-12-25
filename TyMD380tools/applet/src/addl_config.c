@@ -107,6 +107,7 @@ int cfg_load()
 
 	if(tmp.length != sizeof(addl_config_t)){
 		global_addl_config.mic_gain = 0;
+		global_addl_config.audio_leveling = 0;
 		global_addl_config.display_options |= ShowLabelTG;
 		return 0;
 	}

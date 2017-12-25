@@ -159,6 +159,8 @@ const static wchar_t wt_button_cw_repeat[]  = L"Morse Repeat";
 const static wchar_t wt_button_toggle_prom[] = L"Toggle Promiscuous";
 const static wchar_t wt_button_adhoc_priv[]  = L"Priv Call LH";
 const static wchar_t wt_button_lastheard[]   = L"Open Lastheard";
+const static wchar_t wt_button_autolevel[]   = L"Audio Leveling";
+const static wchar_t wt_autolevel_auto[]     = L"Auto";
 
 const static uint8_t button_functions[]     = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a,
                                                0x0b, 0x0c, 0x0d, 0x0e, 0x15, 0x16, 0x17, 0x56, 0x57, 0x19, 0x1a, 0x1e,
@@ -296,7 +298,7 @@ void create_menu_entry_rev(int menuid, const wchar_t * label , void (*green_key)
 #else
 #warning TODO find language menu on this firmware version    
 #endif
-
+ 
 }
 
 uint8_t index_of(uint8_t value, uint8_t arr[], uint8_t len)
@@ -425,6 +427,26 @@ void create_menu_entry_promtg_disable_screen(void)
 
     cfg_save();
 }
+
+void create_menu_entry_autolevel_enable_screen(void)
+{
+	mn_create_single_timed_ack(wt_button_autolevel, wt_autolevel_auto);
+
+	global_addl_config.audio_leveling = 1;
+
+	cfg_save();
+}
+
+void create_menu_entry_autolevel_disable_screen(void)
+{
+	mn_create_single_timed_ack(wt_button_autolevel, wt_disable);
+
+	global_addl_config.audio_leveling = 0;
+
+	cfg_save();
+}
+
+
 
 void create_menu_entry_micbargraph_vert_screen(void)
 {
@@ -878,6 +900,25 @@ void create_menu_entry_promtg_screen(void)
 
     mn_submenu_finalize();
 }
+
+void create_menu_entry_autolevel_screen(void)
+{
+	mn_submenu_init(wt_button_autolevel);
+
+	if (global_addl_config.audio_leveling == 1) {
+		md380_menu_entry_selected = 0;
+	}
+	else {
+		md380_menu_entry_selected = 1;
+	}
+
+	mn_submenu_add(wt_autolevel_auto, create_menu_entry_autolevel_enable_screen);
+	mn_submenu_add(wt_disable, create_menu_entry_autolevel_disable_screen);
+
+	mn_submenu_finalize();
+}
+
+
 
 void create_menu_entry_micbargraph_screen(void)
 {
@@ -2033,6 +2074,8 @@ void create_menu_entry_addl_functions_screen(void)
     mn_submenu_add_8a(wt_set_tg_id, create_menu_entry_set_tg_screen, 0); // Brad's PR#708 already in use here (DL4YHF, since 2017-03)
     mn_submenu_add_98(wt_micbargraph, create_menu_entry_micbargraph_screen);
 	mn_submenu_add_98(wt_agc, create_menu_entry_agc_screen);
+	mn_submenu_add_98(wt_button_autolevel, create_menu_entry_autolevel_screen);
+	
 	
     //mn_submenu_add_8a(wt_experimental, create_menu_entry_experimental_screen, 1);
     mn_submenu_add(wt_sidebutton_menu, create_menu_entry_sidebutton_screen);
