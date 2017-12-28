@@ -133,6 +133,9 @@ void handle_hotkey( int keycode )
 	char lat[23] = { 0 };
 	char lng[23] = { 0 };
     reset_backlight();
+	char stufff = 0;
+	channel_info_t *ci = &current_channel_info;
+	int ts2 = (ci->cc_slot_flags >> 3) & 0x1;
     
     switch( keycode ) {
 		case 0 :
@@ -140,9 +143,29 @@ void handle_hotkey( int keycode )
             switch_to_screen(6);
             break ;
         case 1 :
+			//syslog_printf("=key_code=%d =%d - %d\n", kb_keycode, kb_keypressed, kb_key_press_time);
+			if (global_addl_config.audio_leveling) {
+				syslog_printf("AudLvling=off\n");
+				bp_send_beep(BEEP_ROGER);
+			}
+			else {
+				syslog_printf("AudLvling=on\n");
+				bp_send_beep(BEEP_TEST_3);
+			}
+			global_addl_config.audio_leveling = (global_addl_config.audio_leveling ? 0 : 1);
             //sms_test();
 			//c5000_spi0_writereg( 0x0F, 0xE8);
-			bp_send_beep(BEEP_TEST_1);
+
+			/*current_channel_info.cc_slot_flags = (ts2 ? (current_channel_info.cc_slot_flags & 0x7) | 0x4 : (current_channel_info.cc_slot_flags & 0xB) | 0x8);
+
+			
+			
+
+			c5000_spi0_readreg(0x10, &stufff);
+			stufff = (stufff & 0xFE) | (ts2 ? 0x1 : 0);
+			c5000_spi0_writereg(0x10, stufff);
+			
+			bp_send_beep(BEEP_TEST_1);*/
 
 			//con_printf("%S\r\n", (wchar_t*)0x2001E1A0);
 			/*int i = 0;
@@ -475,6 +498,7 @@ void kb_handle(int key) {
 
 }
 
+int lastKey = 0;
 void kb_handler_hook()
 {
 
@@ -514,15 +538,26 @@ void kb_handler_hook()
         }
     }
 
-    if( is_intercept_allowed() ) {
-        if( is_intercepted_keycode(kc) ) {
-            if( (kp & 2) == 2 ) {
-                kb_keypressed = 8 ;
-                handle_hotkey(kc);
-                return ;
-            }
-        }
-    }
+	
+		if (is_intercept_allowed()) {
+			if (is_intercepted_keycode(kc)) {
+				if ((kp & 2) == 2) {
+					if (kc == 1 && lastKey == kc) {
+						kb_keypressed = 8;
+						return;
+					}else {
+						kb_keypressed = 8;
+						
+						handle_hotkey(kc);
+						lastKey = kc;
+						return;
+					}
+				}
+			}
+		}
+		if ((kp & 2) != 2) {
+			lastKey = 0;
+		}
 
     if ( kc == 17 || kc == 18 ) {
       if ( (kp & 2) == 2 || kp == 5 ) { // The reason for the bitwise AND is that kp can be 2 or 3
