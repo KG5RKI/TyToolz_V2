@@ -50,7 +50,7 @@ static void ColorPicker_Draw(app_menu_t *pMenu, menu_item_t *pItem)
 	uint16_t color[2]; // [0] = fg_color, [1] = bg_color, but indexable
 	rgb_quad_t rgb;
 	lcd_context_t dc;
-
+	 //sex
 	// Draw the COMPLETE screen, without clearing it initially to avoid flicker
 	LCD_InitContext(&dc); // init context for 'full screen', no clipping
 	color[1] = (uint16_t)pMenu->iEditValue; // background colour = "mixed sample"
