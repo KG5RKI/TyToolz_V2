@@ -1,7 +1,13 @@
 
 RELEASE=dist/md380tools-`date "+%Y-%m-%d"`
 
-.PHONY: dist
+ifeq ($(OS),Windows_NT)
+	FLASH_COMMAND=./flasha.exe flash
+else
+	FLASH_COMMAND=./md380-dfu upgrade
+endif
+
+.PHONY: dist all
 
 all: image_D13
 
@@ -34,6 +40,9 @@ image_S13:
 original_D13: 
 	"${MAKE}" -C firmware unwrapped/D013.020.img
 
+original_D13.34: 
+	"${MAKE}" -C firmware unwrapped/D013.034.img
+
 original_S13: 
 	"${MAKE}" -C firmware unwrapped/S013.020.img
 
@@ -44,28 +53,31 @@ original_D03:
 	"${MAKE}" -C firmware unwrapped/D003.020.img
 
 flash_original_D13: original_D13
-	./md380-dfu upgrade firmware/bin/D013.020.bin
+	${FLASH_COMMAND} firmware/bin/D013.020.bin
+
+flash_original_D13.34: original_D13.34
+	${FLASH_COMMAND} firmware/bin/D013.034.bin
 
 flash_original_S13: original_S13
-	./md380-dfu upgrade firmware/bin/S013.020.bin
+	${FLASH_COMMAND} firmware/bin/S013.020.bin
 
 flash_original_D02: original_D02
-	./md380-dfu upgrade firmware/bin/D002.032.bin
+	${FLASH_COMMAND} firmware/bin/D002.032.bin
 
 flash_original_D03: original_D03
-	./md380-dfu upgrade firmware/bin/D003.020.bin
+	${FLASH_COMMAND} firmware/bin/D003.020.bin
 
 flash: image_D13
-	./flasha.exe flash applet/experiment.bin
+	${FLASH_COMMAND} applet/experiment.bin
 
 flash_D02: image_D02
-	./md380-dfu upgrade applet/experiment.bin
+	${FLASH_COMMAND} applet/experiment.bin
 
 flash_D13: image_D13
-	./md380-dfu upgrade applet/experiment.bin
+	${FLASH_COMMAND} applet/experiment.bin
 
 flash_S13: image_S13
-	./flasha.exe flash applet/experiment.bin
+	${FLASH_COMMAND} applet/experiment.bin
 
 sync:
 	"${MAKE}" -C annotations sync
@@ -130,7 +142,7 @@ dist:
 #Clean out some gunk
 	rm -rf $(RELEASE)/__MACOSX
 #Add the latest database
-	make -C db clean all
+	"${MAKE}" -C db clean all
 	cp db/stripped.csv $(RELEASE)/callerid.csv
 #Zip it up for distribution.
 	zip -r $(RELEASE).zip $(RELEASE)
@@ -142,10 +154,10 @@ dbg:
 	@echo MAKE: '${MAKE}'
 	@echo ________
 	@echo AWK version
-	-awk -V
+	-awk -Wversion 2>/dev/null || awk --version
 	@echo ________
 	@echo Make version
-	make -v
+	"${MAKE}" -v
 	@echo ________
 
 ci: dbg clean 
