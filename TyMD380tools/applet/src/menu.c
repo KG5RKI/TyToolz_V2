@@ -33,13 +33,13 @@
             // whichever was opened FIRST (via red or green button) 
             // will gain control over the framebuffer and thus disable "the other" menu.
 
-const static wchar_t wt_addl_func[]         = L"MD380Toolz";
+const static wchar_t wt_addl_func[]         = L"JasTyoolz";
 const static wchar_t wt_datef[]             = L"Date format";
 const static wchar_t wt_debug[]             = L"USB logging";
 const static wchar_t wt_netmon[]            = L"NetMon";
 const static wchar_t wt_disable[]           = L"Disable";
 const static wchar_t wt_enable[]            = L"Enable";
-const static wchar_t wt_rbeep[]             = L"M. RogerBeep";
+const static wchar_t wt_rbeep[]             = L"Softer Beeps";
 
 const static wchar_t wt_bootopts[]          = L"Boot Options";
 const static wchar_t wt_demoscr[]           = L"Demo Screen";
@@ -48,14 +48,14 @@ const static wchar_t wt_demoscr_disable[]   = L"Disable";
 const static wchar_t wt_splash[]            = L"Splash Mode";
 
 const static wchar_t wt_showcall[]          = L"Show Calls";      // was UsersCSV / enable / disable now added Talker Alias
-const static wchar_t wt_fromcps[]           = L"CPS only";
-const static wchar_t wt_usercsv[]           = L"User DB";
+const static wchar_t wt_fromcps[]           = L"Contacts";
+const static wchar_t wt_usercsv[]           = L"Global UserDB";
 const static wchar_t wt_talkalias[]         = L"Talk Alias";
 const static wchar_t wt_ta_user[]           = L"TA & UserDB";
 
 const static wchar_t wt_tg_display[]        = L"TG Display";      
-const static wchar_t wt_from_userdb[]       = L"From UserDB";
-const static wchar_t wt_number_only[]       = L"Number Only";
+const static wchar_t wt_from_userdb[]       = L"Auto-Name";
+const static wchar_t wt_number_only[]       = L"Group Number";
 
 const static wchar_t wt_datef_original[]    = L"YYYY/MM/DD";
 const static wchar_t wt_datef_germany[]     = L"DD.MM.YYYY";
@@ -72,7 +72,7 @@ const static wchar_t wt_no_w25q128[]        = L"No W25Q128";
 const static wchar_t wt_set_tg_id[]         = L"Set Talkgroup"; // brad's PR #708 
 const static wchar_t wt_set_priv_id[]       = L"Private Call";  
 const static wchar_t wt_experimental[]      = L"Experimental";
-const static wchar_t wt_micbargraph[]       = L"Mic bargraph";
+const static wchar_t wt_micbargraph[]       = L"Mic Meter";
 
 const static wchar_t wt_micbargraph_vert[]       = L"Vertical";
 const static wchar_t wt_micbargraph_vert_lh[]    = L"Vertical + LH";
@@ -108,15 +108,14 @@ const static wchar_t *wt_bl_intensity[NUM_BACKLIGHT_INTENSITIES] =
    L"5",       L"6",          L"7", L"8",          L"9 (bright)" }; 
 #endif // CONFIG_DIMMED_LIGHT ?
 
-const static wchar_t wt_cp_override[]       = L"CoPl Override";
+const static wchar_t wt_cp_override[]       = L"Boot Screen";
 const static wchar_t wt_splash_manual[]     = L"Disabled";
 const static wchar_t wt_splash_callid[]     = L"Callsign+DMRID";
 const static wchar_t wt_splash_callname[]   = L"Callsign+Name";
 
 const static wchar_t wt_cp_override_dmrid[] = L"ID Override";
 
-const static wchar_t wt_config_reset[]      = L"Config Reset";
-const static wchar_t wt_config_reset_doit[] = L"Config Reset2";
+
 
 const static wchar_t wt_sidebutton_menu[]   = L"Side Buttons";
 const static wchar_t wt_button_top_press[]  = L"Top Pressed";
@@ -125,43 +124,46 @@ const static wchar_t wt_button_top_held[]   = L"Top Held";
 const static wchar_t wt_button_bot_held[]   = L"Bottom Held";
 
 const static wchar_t wt_button_unassigned[] = L"Unassigned";
+const static wchar_t wt_button_bklt_en[]    = L"Toggle bklight";
+const static wchar_t wt_button_rep_talk[]   = L"Talkaround";
 const static wchar_t wt_button_alert_tone[] = L"All Tone Tog";
-const static wchar_t wt_button_emerg_on[]   = L"Emergency On";
-const static wchar_t wt_button_emerg_off[]  = L"Emergency Off";
+const static wchar_t wt_button_toggle_prom[] = L"Toggle Promiscuous";
+const static wchar_t wt_button_adhoc_priv[]  = L"Priv Call LH";
+const static wchar_t wt_button_lastheard[]   = L"Open Lastheard";
 const static wchar_t wt_button_power[]      = L"High/Low Pwr";
 const static wchar_t wt_button_monitor[]    = L"Monitor";
 const static wchar_t wt_button_nuisance[]   = L"Nuisance Del";
+const static wchar_t wt_button_set_tg[]     = L"Set Talkgroup";
+const static wchar_t wt_button_alt_text[]   = L"Alt. UI Colors";
+const static wchar_t wt_button_scan[]       = L"Scan On/Off";
+const static wchar_t wt_button_squelch[]    = L"Squelch Tight";
+const static wchar_t wt_button_vox[]        = L"Vox On/Off";
+const static wchar_t wt_button_zone_inc[]   = L"Zone Inc.";
+const static wchar_t wt_button_zone_dec[]   = L"Zone Dec.";
+const static wchar_t wt_button_zone_tog[]   = L"Zone Toggle";
 const static wchar_t wt_button_ot1[]        = L"One Touch 1";
 const static wchar_t wt_button_ot2[]        = L"One Touch 2";
 const static wchar_t wt_button_ot3[]        = L"One Touch 3";
 const static wchar_t wt_button_ot4[]        = L"One Touch 4";
 const static wchar_t wt_button_ot5[]        = L"One Touch 5";
 const static wchar_t wt_button_ot6[]        = L"One Touch 6";
-const static wchar_t wt_button_rep_talk[]   = L"Talkaround";
-const static wchar_t wt_button_scan[]       = L"Scan On/Off";
-const static wchar_t wt_button_squelch[]    = L"Squelch Tight";
-const static wchar_t wt_button_privacy[]    = L"Privacy On/Off";
-const static wchar_t wt_button_vox[]        = L"Vox On/Off";
-const static wchar_t wt_button_zone_inc[]   = L"Zone Inc.";
-const static wchar_t wt_button_zone_dec[]   = L"Zone Dec.";
-const static wchar_t wt_button_zone_tog[]   = L"Zone Toggle";
-const static wchar_t wt_button_bat_ind[]    = L"Bat Indicator";
+
 const static wchar_t wt_button_man_dial[]   = L"Manual Dial";
 const static wchar_t wt_button_lone_work[]  = L"Lone wk On/Off";
 const static wchar_t wt_button_1750_hz[]    = L"1750hz Tone";
-const static wchar_t wt_button_bklt_en[]    = L"Toggle bklight";
-const static wchar_t wt_button_set_tg[]     = L"Set Talkgroup";
-const static wchar_t wt_button_alt_text[]   = L"Alt. UI Colors";
+const static wchar_t wt_button_emerg_on[]   = L"Emergency On";
+const static wchar_t wt_button_emerg_off[]  = L"Emergency Off";
+const static wchar_t wt_button_privacy[]    = L"Encrypt On/off";
+const static wchar_t wt_button_bat_ind[]    = L"Bat Indicator";
 #if( CONFIG_MORSE_OUTPUT )
 const static wchar_t wt_button_narrator[]   = L"Morse Narrator";
 const static wchar_t wt_button_cw_repeat[]  = L"Morse Repeat";
 #endif
-const static wchar_t wt_button_toggle_prom[] = L"Toggle Promiscuous";
-const static wchar_t wt_button_adhoc_priv[]  = L"Priv Call LH";
-const static wchar_t wt_button_lastheard[]   = L"Open Lastheard";
+
 const static wchar_t wt_button_autolevel[]   = L"Audio Leveling";
 const static wchar_t wt_autolevel_auto[]     = L"Auto";
-
+const static wchar_t wt_config_reset[]      = L"Config Reset";
+const static wchar_t wt_config_reset_doit[] = L"Config Reset2";
 const static uint8_t button_functions[]     = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a,
                                                0x0b, 0x0c, 0x0d, 0x0e, 0x15, 0x16, 0x17, 0x56, 0x57, 0x19, 0x1a, 0x1e,
                                                0x1f, 0x26, 0x50, 0x51
