@@ -80,7 +80,9 @@ void drawascii(char *ascii, int x, int y)
     //Widen the string.  We really ought to do proper lengths.
     wchar_t wide[15];
     for (int i = 0; i < 15; i++)
+    {
         wide[i] = ascii[i];
+    }
 
 	swapFGBG();
     //#ifdef CONFIG_GRAPHICS
@@ -259,7 +261,6 @@ void get_RTC_time(char* buffer) {
 	md380_itow(&wide_time[6], RTC_TimeStruct.RTC_Seconds);
 	wide_time[8] = '\0';
 
-	int b = 0;
 	for (int i = 0; i < 9; i++)
 	{
 		if (wide_time[i] == '\0')

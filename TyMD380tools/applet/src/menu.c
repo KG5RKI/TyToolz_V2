@@ -45,7 +45,7 @@ const static wchar_t wt_bootopts[]          = L"Boot Options";
 const static wchar_t wt_demoscr[]           = L"Demo Screen";
 const static wchar_t wt_demoscr_enable[]    = L"Enable";
 const static wchar_t wt_demoscr_disable[]   = L"Disable";
-const static wchar_t wt_splash[]            = L"Splash Mode";
+//const static wchar_t wt_splash[]            = L"Splash Mode";
 
 const static wchar_t wt_showcall[]          = L"Show Calls";      // was UsersCSV / enable / disable now added Talker Alias
 const static wchar_t wt_fromcps[]           = L"CPS only";
@@ -68,7 +68,7 @@ const static wchar_t wt_datef_talias[]      = L"Talker Alias";    // added Talke
 const static wchar_t wt_promtg[]            = L"Promiscuous";
 const static wchar_t wt_edit[]              = L"Edit";
 const static wchar_t wt_edit_dmr_id[]       = L"Edit DMR-ID";
-const static wchar_t wt_no_w25q128[]        = L"No W25Q128";
+//const static wchar_t wt_no_w25q128[]        = L"No W25Q128";
 const static wchar_t wt_set_tg_id[]         = L"Set Talkgroup"; // brad's PR #708 
 const static wchar_t wt_set_priv_id[]       = L"Private Call";  
 const static wchar_t wt_experimental[]      = L"Experimental";
@@ -1002,7 +1002,7 @@ void create_menu_entry_tg_display_screen(void)
 {
 	mn_submenu_init(wt_tg_display);
 
-	md380_menu_entry_selected = (cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG) ? 0 : 1);
+	md380_menu_entry_selected = (cfg_tst_display_flag(&global_addl_config, ShowLabelTG) ? 0 : 1);
 
 	mn_submenu_add(wt_from_userdb, create_menu_entry_tg_display_userdb_screen);
 	mn_submenu_add(wt_number_only, create_menu_entry_tg_display_number_screen);
@@ -1952,7 +1952,7 @@ void create_menu_entry_set_tg_screen(void)
    uint8_t i;
    uint8_t *p;
    uint32_t nchars;
-   int current_tg = 0;
+   //int current_tg = 0;
 
    md380_menu_0x2001d3c1 = md380_menu_0x200011e4;
    mn_editbuffer_poi = md380_menu_edit_buf;
@@ -1969,7 +1969,7 @@ void create_menu_entry_set_tg_screen(void)
    //current_tg = (int) contact.id_h ;
    //current_tg = (current_tg<<8) + (int) contact.id_m;
    //current_tg = (current_tg<<8) + (int) contact.id_l;
-   current_tg = rst_dst;
+   //current_tg = rst_dst;
 
    //nchars = uli2w(current_tg, md380_menu_edit_buf);
    nchars = 0;

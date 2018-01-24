@@ -130,12 +130,12 @@ extern void gui_control( int r0 );
 
 void handle_hotkey( int keycode )
 {
-	char lat[23] = { 0 };
-	char lng[23] = { 0 };
+	//char lat[23] = { 0 };
+	//char lng[23] = { 0 };
     reset_backlight();
-	char stufff = 0;
+	//char stufff = 0;
 	channel_info_t *ci = &current_channel_info;
-	int ts2 = (ci->cc_slot_flags >> 3) & 0x1;
+	//int ts2 = (ci->cc_slot_flags >> 3) & 0x1;
     
     switch( keycode ) {
 		case 0 :
@@ -478,7 +478,7 @@ extern void kb_handler();
 static int nextKey = -1;
 
 void kb_handle(int key) {
-	int kp = kb_keypressed;
+	//int kp = kb_keypressed;
 	int kc = key;
 
 	if (is_intercept_allowed()) {

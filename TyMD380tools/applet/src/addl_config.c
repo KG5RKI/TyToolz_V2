@@ -126,7 +126,7 @@ void cfg_save()
 }
 
 int cfg_tst_display_flag(addl_config_t* cfg, char flg) {
-	return cfg->display_options & flg != 0;
+	return cfg->display_options & (flg != 0);
 }
 
 void cfg_set_radio_name()

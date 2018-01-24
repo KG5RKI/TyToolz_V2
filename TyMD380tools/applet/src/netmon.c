@@ -303,7 +303,7 @@ void netmon4_update()
         }
         src = rst_src;
 		dst = rst_dst;
-        user_t usr, usr2;
+        user_t usr;
    
         if( ( src != 0 ) && ( rst_flco < 4 ) && call_start_state == 1 ) {
             call_start_state = 0;
