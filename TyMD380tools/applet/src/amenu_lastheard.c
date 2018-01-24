@@ -86,7 +86,7 @@ menu_item_t am_Lastheard_Options[] = // setup menu, nesting level 1 ...
 	NULL,0,0,                  NULL,  am_cbk_Lastheard_BlockUser },
 
 	{ "[-]Back",       DTYPE_NONE, APPMENU_OPT_BACK,0,
-	NULL,0,0,                  NULL,  NULL },
+	NULL,0,0,                  NULL,  am_cbk_LastheardList },
 
 	// End of the list marked by "all zeroes" :
 	{ NULL, 0/*dt*/, 0/*opt*/, 0/*ov*/, NULL/*pValue*/, 0,0, NULL, NULL }
@@ -261,19 +261,8 @@ int am_cbk_LastheardList(app_menu_t *pMenu, menu_item_t *pItem, int event, int p
 		case 'M':  // green "Menu" key : kind of ENTER. But here, "apply & return" .
 			if (pSL->focused_item >= 0)
 			{
-				//ContactList_SetZoneByIndex(pSL->focused_item);
-				//contactIndex = pSL->focused_item;
-				//fIsTG = (selContact.type == 0xC1 ? 1 : 0);
 				memcpy(&selUser, &lhdir[pSL->focused_item], sizeof(lastheard_user));
-				//usr_find_by_dmrid(&selUser.dbEntry, selUser.src);
 				Menu_EnterSubmenu(pMenu, am_Lastheard_Options);
-
-				// The above command switched to the new zone, and probably set
-				// channel_num = 0 to 'politely ask' the original firmware to 
-				// reload whever is necessary from the codeplug (SPI-Flash). 
-				// It's unknown when exactly that happens (possibly in another task). 
-				// To update the CHANNEL NAME from the *new* zone in our menu, 
-				// let a few hundred milliseconds pass before redrawing the screen:
 				StartStopwatch(&pMenu->stopwatch_late_redraw);
 			}
 			return AM_RESULT_EXIT_AND_RELEASE_SCREEN;
