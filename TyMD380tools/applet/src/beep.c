@@ -14,6 +14,7 @@
 #include "dmesg.h"
 #include "addl_config.h"
 #include "beep.h"
+#include "display.h"
 #include "debug.h"
 #include "mbox.h"
 #include "os.h"
@@ -158,6 +159,10 @@ void * beep_OSMboxPend_hook(OS_EVENT *pevent, uint32_t timeout, int8_t *perr)
             case BEEP_TEST_3 :
                 bp_beep(3);
                 break ;
+			case 15:
+				if (gui_opmode3 == 3) {            
+						return 0;
+				}
             default:
                 return ret ; 
         }
