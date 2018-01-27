@@ -288,11 +288,10 @@ void handle_hotkey(int keycode)
 		if (*(char*)0x2001E94F > 3) {
 			md380_menu_0x2001d3ee = 0; //  startpos cursor
 			md380_menu_0x2001d3ef = 0; //  startpos cursor
-			uint8_t *p;
-			for (int i = 0; i < 0x11; i++) {
-				p = (uint8_t *)md380_menu_edit_buf;
-				p = p + i;
-				*p = 0;
+			uint8_t *p = md380_menu_edit_buf;
+			// 144 16bit characters, + 1 for ending NULL
+			for (int i = 0; i < (144 * 2) + 1; i++) {
+				p[i] = 0;
 			}
 			break;
 		}
