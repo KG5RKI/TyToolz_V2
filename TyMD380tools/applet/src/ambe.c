@@ -132,18 +132,18 @@ int ambe_unpack_hook(int a1, int a2, char length, int a4){
 float KillDenormal = 0.000000000001f;
 #define dBLogFactor 8.68588963807f
 #define InputGain  2.0f
-#define OutputGain 3.0f
+#define OutputGain 48.0f
 float MinGain = 0.015625;
-float MaxGain = 55.0;
-#define ClipPoint (0.5507f/OutputGain)
+float MaxGain = 48.0;
+#define ClipPoint (1.0f/OutputGain)
 #define TargetPoint (0.45f/OutputGain)
 #define NoiseGain  (1.0 / (InputGain*OutputGain))
-#define NoiseFloorThresholddB -90.0f
+#define NoiseFloorThresholddB -10.0f
 #define AttackTime 0.002f
 #define ReleaseTime  0.060f
-#define NoiseFloorReleaseTime 1.0
-#define LowPassFilterFrequency 3000.0 // Hz
-#define HighPassFilterFrequency 100.0 // Hz
+#define NoiseFloorReleaseTime .120
+#define LowPassFilterFrequency 3250.0 // Hz
+#define HighPassFilterFrequency 150.0 // Hz
 int RMSHistorySize = 0x1FF;
 int RMSHistoryMask = 0x1FF - 1;
 
@@ -212,7 +212,8 @@ int ambe_decode_wav_hook(int *a1, signed int eighty, char *bitbuffer,
 	  short* samples = (short*)a1;
 	  for (int i = 0; i < 80; i++)
 	  {
-		  float samp = samples[i] * 2 * (1.0f / 32768.0f);
+		  //change the 2 to multiply sample before used in calcs
+		  float samp = samples[i] * 6 * (1.0f / 32768.0f);
 		  float inpsamp = samp;
 
 		  fLowPassState = (fLowPassState*(1.0f - fLowPassCoef)) + (inpsamp * fLowPassCoef);
@@ -255,7 +256,8 @@ int ambe_decode_wav_hook(int *a1, signed int eighty, char *bitbuffer,
 		  else if (fState > MaxGain) {
 			  fState = MaxGain;
 		  }
-		  samples[i] = (Min(Max(round(samp*fState*32768.0f), -32767), 32767)) * 17;
+		  //multiply final result by 17
+		  samples[i] = (Min(Max(round(samp*fState*32768.0f), -32767), 32767)) * 7;
 	  }
   }
   
