@@ -134,11 +134,11 @@ float KillDenormal = 0.000000000001f;
 #define InputGain  2.0f
 #define OutputGain 3.0f
 float MinGain = 0.015625;
-float MaxGain = 48.0;
-#define ClipPoint (0.5307f/OutputGain)
+float MaxGain = 55.0;
+#define ClipPoint (0.5507f/OutputGain)
 #define TargetPoint (0.45f/OutputGain)
 #define NoiseGain  (1.0 / (InputGain*OutputGain))
-#define NoiseFloorThresholddB -30.0f
+#define NoiseFloorThresholddB -90.0f
 #define AttackTime 0.002f
 #define ReleaseTime  0.060f
 #define NoiseFloorReleaseTime 1.0
@@ -232,7 +232,6 @@ int ambe_decode_wav_hook(int *a1, signed int eighty, char *bitbuffer,
 			  if (RMS < fNoiseFloorThreshold) {
 				  fState = (((fState*(1.0 - fNoiseFloorReleaseCoef)) + (NoiseGain*fNoiseFloorReleaseCoef)) + KillDenormal) - KillDenormal;
 			  }
-
 		  }
 		  else {
 			  GainedPeak = Peak*fState;
@@ -256,7 +255,7 @@ int ambe_decode_wav_hook(int *a1, signed int eighty, char *bitbuffer,
 		  else if (fState > MaxGain) {
 			  fState = MaxGain;
 		  }
-		  samples[i] = (Min(Max(round(samp*fState*32768.0f), -32767), 32767)) * 10;
+		  samples[i] = (Min(Max(round(samp*fState*32768.0f), -32767), 32767)) * 17;
 	  }
   }
   
