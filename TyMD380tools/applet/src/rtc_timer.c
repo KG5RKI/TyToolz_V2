@@ -326,7 +326,9 @@ void trace_gui_opmode3()
 }
 #endif
 
+extern int fIsEditing;
 static char fCntAGC = 0;
+
 void f_4225_hook()
 {
     
@@ -348,6 +350,7 @@ void f_4225_hook()
                 gui_opmode1 = SCR_MODE_MENU ;
             }
         } else {
+			fIsEditing = 0;
             old = new ;
         }
     }

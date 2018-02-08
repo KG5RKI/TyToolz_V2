@@ -1945,6 +1945,15 @@ void create_menu_entry_set_priv_screen_store(void)
 #endif
 }
 
+int fIsEditing = 0;
+
+void numerical_entry_hook(void* a, void* b, void* c) {
+	typedef void* md380_menu_numerical_input_B(void*, void*, void*);
+	md380_menu_numerical_input_B* f = (md380_menu_numerical_input_B*)0x0801b043;
+	fIsEditing = 1;
+	f(a, b, c);
+}
+
 void create_menu_entry_set_tg_screen(void)
 {
 #if defined(FW_D13_020) || defined(FW_S13_020)

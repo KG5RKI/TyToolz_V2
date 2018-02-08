@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT20M0.6560404S" SolutionTotalViewTime="PT4H12M48.021091S" SolutionTotalDebugTime="PT0S">
+  <FileVersion>
+    <Major>1</Major>
+    <Minor>0</Minor>
+  </FileVersion>
+  <SessionTimeList />
+  <LastSessionTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT3M50.9000236S" EditActiveTime="PT3M19.7265697S">
+      <ModifiedDate>2018-02-06T06:34:52.4507929-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:19:10.397795-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT31.7167239S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:18:38.67057-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.7743339S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:10.9026399-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.6595725S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:11.6794748-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT23.1188511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:15.3410478-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.3511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:16.3245718-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+  </LastSessionTimeList>
+  <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT3M32.5500717S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\addl_config.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:49:16.9852618-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.740329S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\addl_config.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:49:16.2442713-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT9.7224317S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\aes.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T03:48:01.3660751-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1H53M53.6016685S" EditActiveTime="PT6M50.3915596S">
+      <ModifiedDate>2018-02-06T06:34:52.4507929-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>3</EditedCount>
+      <ViewedCount>4</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-28T16:02:59.6219846-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.6520775S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T05:49:49.4461298-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT27M13.4322983S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_codeplug.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:28:36.0341577-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.904947S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_codeplug.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:15.1693761-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M29.2163656S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_contacts.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:16.0757998-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.9929476S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_contacts.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:14.1744345-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.1614124S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_set_tg.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T03:52:11.5096805-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14M38.6674977S" EditActiveTime="PT22.564668S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\app_menu.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:28:51.8963438-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8M20.7764727S" EditActiveTime="PT0.8851891S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\beep.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T03:29:00.5135071-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18M50.0097858S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\beep.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T03:29:10.135644-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT51.4549676S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\codeplug.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:33:22.7179679-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M12.4852999S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\display.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-16T01:22:40.9142746-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT58.9333666S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\display.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:30:34.016395-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT20M33.1880489S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\irq_handlers.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:05:06.5643432-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M4.010381S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\irq_handlers.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:01:29.0662623-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29M33.6217919S" EditActiveTime="PT6M4.4853015S">
+      <ModifiedDate>2018-01-20T04:43:42.1002943-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>4</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:03:08.9421595-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4.549883S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\md380.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T07:57:03.3415189-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT19M16.4790129S" EditActiveTime="PT6M17.8654813S">
+      <ModifiedDate>2018-01-20T04:20:15.5838417-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\menu.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:13:02.3626139-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.6928138S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\menu.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:35:48.2471431-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M42.0409416S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\narrator.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:30:02.9360611-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT41.9103381S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\netmon.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-06T23:59:56.6520231-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT21.7194131S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\radiostate.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:05:04.3820259-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT44.7161129S" EditActiveTime="PT24.4633403S">
+      <ModifiedDate>2018-01-20T04:07:27.1509857-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\rtc_timer.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:18.6971861-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT9.2585481S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\sms.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T12:34:11.3500091-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.7743339S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:10.9026399-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.6595725S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:11.6794748-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.8213687S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\syslog.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:13.1862705-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT22.7310036S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\usb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:15.0101394-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT23.1188511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:15.3410478-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.3511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:16.3245718-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+  </TotalTimeList>
+  <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT2.3511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:16.3245718-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT23.1188511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\util.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:15.3410478-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.6595725S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:11.6794748-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.7743339S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\spiflash.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:31:10.9026399-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3M50.8763125S" EditActiveTime="PT3M19.7265697S">
+      <ModifiedDate>2018-02-06T06:34:52.4507929-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:19:10.397795-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT31.7167239S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-06T06:18:38.67057-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3M32.5500717S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\addl_config.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:49:16.9852618-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.740329S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\addl_config.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:49:16.2442713-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8.544859S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\aes.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:49:07.6984132-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M29.3699237S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:40:56.0780261-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6M49.7191735S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-02-05T15:40:47.0513014-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT44.7161129S" EditActiveTime="PT24.4633403S">
+      <ModifiedDate>2018-01-20T04:07:27.1509857-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\rtc_timer.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:18.6971861-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT22.7310036S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\usb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:15.0101394-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.8213687S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\syslog.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:06:13.1862705-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT19.538629S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\radiostate.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T04:05:53.646643-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.9458301S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\md380.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:50:59.3908-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.6928138S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\menu.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:35:48.2471431-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT58.9333666S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\display.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:30:34.016395-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT9M9.1051125S" EditActiveTime="PT6M0.3595755S">
+      <ModifiedDate>2018-01-20T04:43:42.1002943-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:30:17.4984258-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT19M16.4790129S" EditActiveTime="PT6M17.8654813S">
+      <ModifiedDate>2018-01-20T04:20:15.5838417-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\menu.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:13:02.3626139-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT28.5169582S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\display.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-20T02:12:42.2955782-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT43.968842S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\display.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-16T01:22:40.9142746-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT9.2585481S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\sms.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T12:34:11.3500091-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.6040529S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\md380.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T07:57:03.3415189-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18M50.0097858S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\beep.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T03:29:10.135644-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8M20.7764727S" EditActiveTime="PT0.8851891S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\beep.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-08T03:29:00.5135071-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT41.9103381S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\netmon.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-06T23:59:56.6520231-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT20M33.1880489S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\irq_handlers.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:05:06.5643432-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.1807841S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\radiostate.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:05:04.3820259-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT13M3.080782S" EditActiveTime="PT4.125726S">
+      <ModifiedDate>2018-01-08T07:58:15.0073752-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\keyb.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:03:08.9421595-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M4.010381S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\irq_handlers.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:01:29.0662623-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M33.4813003S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\narrator.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2018-01-01T20:01:19.374013-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1H25M50.0932378S" EditActiveTime="PT3M29.6650689S">
+      <ModifiedDate>2018-01-08T13:37:49.6146759-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T16:28:00.6634034-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT13.0998778S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\app_menu.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T16:27:47.5630286-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.6520775S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\ambe.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T05:49:49.4461298-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.1614124S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_set_tg.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T03:52:11.5096805-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.1775727S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\aes.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-31T03:48:01.3660751-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M29.2163656S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_contacts.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:16.0757998-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.904947S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_codeplug.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:15.1693761-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.9929476S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_contacts.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:34:14.1744345-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT51.4549676S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\codeplug.h</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:33:22.7179679-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8.5596413S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\narrator.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:30:02.9360611-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14M25.5676199S" EditActiveTime="PT22.564668S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\app_menu.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:28:51.8963438-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT27M13.4322983S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Projects\md380_util\TyMD380tools\applet\src\amenu_codeplug.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-29T23:28:36.0341577-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT19M43.2641881S" EditActiveTime="PT0.999921S">
+      <ModifiedDate>2017-12-31T05:49:41.1527054-06:00</ModifiedDate>
+      <ModifiedBy>TIB</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\Projects\md380_util\TyMD380tools\applet\src\ambe.c</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Projects\md380_util\TyMD380tools\TyMD380tools.vcxproj</ProjectName>
+      <CreatedDate>2017-12-28T16:02:59.6219846-06:00</CreatedDate>
+      <ViewedBy>TIB</ViewedBy>
+    </DevTrackerDataItem>
+  </HistoryTimeList>
+</DevTrackerData>

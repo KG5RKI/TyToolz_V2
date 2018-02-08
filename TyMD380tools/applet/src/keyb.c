@@ -34,6 +34,8 @@
 #include "amenu_codeplug.h"
 #include "spiflash.h"
 
+extern int fIsEditing;
+
 uint8_t kb_backlight=0; // flag to disable backlight via sidekey.
 // Other keyboard-related variables belong to the original firmware,
 // e.g. kb_keypressed, address defined in symbols_d13.020 (etc).
@@ -149,7 +151,7 @@ void handle_hotkey( int keycode )
 				bp_send_beep(BEEP_ROGER);
 			}
 			else {
-				syslog_printf("AudLvling=on\n");
+				syslog_printf("Audio_Test=on\n");
 				bp_send_beep(BEEP_TEST_3);
 			}
 			global_addl_config.audio_leveling = (global_addl_config.audio_leveling ? 0 : 1);
@@ -280,6 +282,18 @@ void handle_hotkey( int keycode )
             //mb_send_beep(beep_event_probe);
             break ;
 		case 14 :
+			if (*(char*)0x2001E94F > 3) {
+				md380_menu_0x2001d3ee = 0; //  startpos cursor
+				md380_menu_0x2001d3ef = 0; //  startpos cursor
+				uint8_t *p;
+				for (int i = 0; i < 0x11; i++) {
+					p = (uint8_t *)md380_menu_edit_buf;
+					p = p + i;
+					*p = 0;
+				}
+				break;
+			}
+
 			switch_to_screen(9);
 			//channel_num=0;
 			draw_rx_screen(0xff8032);
@@ -411,8 +425,13 @@ void trace_keyb(int sw)
     }
 }
 
+
+
 inline int is_intercept_allowed()
 {
+	if ((*(char*)0x2001E94F > 3) && kb_keycode == 14) {
+		return 1;
+	}
     if( !is_netmon_enabled() || Menu_IsVisible()) {
         return 0 ;
     }
@@ -424,6 +443,8 @@ inline int is_intercept_allowed()
 //            return 0 ;
 //    }
     
+	//2001CB98 = D13 - edit buffer
+
     switch( gui_opmode2 ) {
         case OPM2_MENU :
             return 0 ;
