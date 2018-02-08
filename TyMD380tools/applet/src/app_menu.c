@@ -85,6 +85,7 @@ struct
 	menu_item_t *pItems;
 	uint8_t item_index;
 	uint8_t vert_scroll_pos;
+	am_callback_t callback;
 } submenu_stack[APPMENU_STACKSIZE];
 
 uint8_t Menu_old_channel_num = 0; // to defeat trouble with 'ad-hoc' TALKGROUPS
@@ -1134,6 +1135,17 @@ void Menu_PushSubmenuToStack(app_menu_t *pMenu)
 		submenu_stack[sp].pItems = (menu_item_t*)pMenu->pItems;
 		submenu_stack[sp].item_index = pMenu->item_index;
 		submenu_stack[sp].vert_scroll_pos = pMenu->vert_scroll_pos;
+
+		// if we're currently in a user screen, handle this "menu" type specially
+		if (pMenu->visible == APPMENU_USERSCREEN_VISIBLE)
+		{
+			menu_item_t *item = Menu_GetFocusedItem(pMenu);
+			submenu_stack[sp].callback = item->callback;
+		}
+		else
+		{
+			submenu_stack[sp].callback = NULL;
+		}
 		pMenu->depth = (uint8_t)(sp + 1);
 	}
 }
@@ -1153,6 +1165,13 @@ BOOL Menu_PopSubmenuFromStack(app_menu_t *pMenu)
 		pMenu->vert_scroll_pos = submenu_stack[sp].vert_scroll_pos;
 		pMenu->depth = (uint8_t)sp;
 		pMenu->redraw = TRUE;
+
+		/* if this was a callback-based screen, invoke the callback directly */
+		if (submenu_stack[sp].callback != NULL)
+		{
+			submenu_stack[sp].callback(pMenu, pMenu->pItems, APPMENU_EVT_PAINT, 0);
+			pMenu->visible = APPMENU_USERSCREEN_VISIBLE;
+		}
 		return TRUE;
 	}
 	return FALSE;  // caller decides what to do now
@@ -1225,7 +1244,9 @@ BOOL Menu_EnterSubmenu(app_menu_t *pMenu, menu_item_t *pItems)
 {
 	if (pItems)
 	{
-		if (!Menu_IsOnStack(pMenu, pItems)) // don't push the same item twice !
+		// don't push the same item twice, unless this is a user screen,
+		// in which case the pMenu pointer will be unchanged from the last menu
+		if (!Menu_IsOnStack(pMenu, pItems) || pMenu->visible == APPMENU_USERSCREEN_VISIBLE)
 		{
 			Menu_PushSubmenuToStack(pMenu);
 			pMenu->pItems = (void*)pItems;
