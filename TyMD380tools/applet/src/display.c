@@ -113,15 +113,11 @@ int fDoOnce = 0;
 
 void draw_micbargraph()
 {
-	int dst;
     int src;
-    int grp ;
 	uint16_t fg_color = 0, bg_color = 0;
 	
     
-    dst = rst_dst ;
     src = rst_src ;
-    grp = rst_grp ;
 	
     if( gui_opmode2 == OPM2_MENU ) {
         // case for pressing the PTT during 'Manual Dial' in 'Contacts'
@@ -275,7 +271,6 @@ void draw_micbargraph()
 						gfx_set_fg_color(0x555555);
 					}
 					
-					int y_index = RX_POPUP_Y_START;
 					gfx_set_bg_color(0xff000000);
 					if(centibel_val>0 && centibel_val < 120){
 						gfx_blockfill(140, 22+(98-centibel_val), 145, 120);
@@ -359,7 +354,9 @@ uint32_t rgb16torgb(uint16_t color) {
 }
 
 
+#undef RX_POPUP_Y_START
 #define RX_POPUP_Y_START 22 // 24
+#undef RX_POPUP_X_START
 #define RX_POPUP_X_START 4  // 10
 
 void draw_rx_screen(unsigned int bg_color)
@@ -400,7 +397,7 @@ void draw_rx_screen(unsigned int bg_color)
 
 	gfx_select_font(gfx_font_small);
 
-	int ts1 = (ci->cc_slot_flags >> 2) & 0x1;
+	//int ts1 = (ci->cc_slot_flags >> 2) & 0x1;
 	int ts2 = (ci->cc_slot_flags >> 3) & 0x1;
 
 	int y_index = RX_POPUP_Y_START;
@@ -629,10 +626,7 @@ void draw_statusline_hook( uint32_t r0 )
 
 void draw_alt_statusline()
 {
-    int dst;
     int src;
-    int grp;
-	int fFound = 0;
 
     gfx_set_fg_color(0);
     gfx_set_bg_color(0xff8032);
@@ -664,7 +658,7 @@ void draw_alt_statusline()
 	} else {										// 2017-02-18 otherwise show lastheard in status line
 			
 	        if( usr_find_by_dmrid(&usr, src) == 0 ) {
-				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
+				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(&global_addl_config, ShowLabelTG)) {
 					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%d->%s %c %s", src, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
 				else {
@@ -672,7 +666,7 @@ void draw_alt_statusline()
 				}
         	} else {
         	    
-				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
+				if (usr_find_by_dmrid(&usr2, rst_dst) != 0 && cfg_tst_display_flag(&global_addl_config, ShowLabelTG)) {
 					gfx_printf_pos2(RX_POPUP_X_START, 96, 157, "lh:%s->%s %c %s", usr.callsign, usr2.callsign, mode, (isBlackListed(src) ? "-Ignore" : " "));
 				}
 				else {
@@ -689,11 +683,6 @@ void draw_alt_statusline()
 
 void draw_adhoc_statusline()
 {
-	int dst;
-	int src;
-	int grp;
-	int fFound = 0;
-
 	int x = RX_POPUP_X_START + 40;
 	int y = 55;
 
@@ -708,7 +697,7 @@ void draw_adhoc_statusline()
 		int tgNum = (ad_hoc_tg_channel ? ad_hoc_talkgroup : current_TG());
 		int callType = (ad_hoc_tg_channel ? ad_hoc_call_type : contact.type);
 		user_t usr;
-		if (usr_find_by_dmrid(&usr, tgNum) != 0 && cfg_tst_display_flag(global_addl_config.display_options, ShowLabelTG)) {
+		if (usr_find_by_dmrid(&usr, tgNum) != 0 && cfg_tst_display_flag(&global_addl_config, ShowLabelTG)) {
 			//gfx_printf_pos2(x, y, 320, "%s - %d", (ad_hoc_call_type == CONTACT_GROUP ? "TG" : "Priv"), ad_hoc_talkgroup);
 			
 			gfx_printf_pos2(x, y, 120, "%s%s", (ad_hoc_tg_channel ? "AdHoc-" : ""), usr.callsign);

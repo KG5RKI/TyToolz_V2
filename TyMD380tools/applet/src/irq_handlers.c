@@ -1069,7 +1069,7 @@ int KeyRowColToVal(uint16_t kb_row_col)
 
 #if( CAN_POLL_KEYS && CONFIG_APP_MENU ) // optional feature ...
 
-static uint32_t green_menu_countdown = 0;
+//static uint32_t green_menu_countdown = 0;
 static uint32_t autorepeat_countdown = 0;
 
 //---------------------------------------------------------------------------

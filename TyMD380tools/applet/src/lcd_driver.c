@@ -392,7 +392,8 @@ int LCD_CopyRectFromFramebuffer_RGB( // Reads a rectangular area of pixels, 24 b
 					 //  Also compatible with HTML 'hex color' when treated like a 
 					 //  24-bit integer on little endian machine.
 {
-	int w, h, nBytes, nPixels;
+	int w, h, nBytes;
+    //int nPixels;
 
 	// Before sending any command to the LCD controller, check the buffer size:
 	w = 1 + x2 - x1;
@@ -413,7 +414,7 @@ int LCD_CopyRectFromFramebuffer_RGB( // Reads a rectangular area of pixels, 24 b
 	LCD_WriteCommand(LCD_CMD_COLMOD); // (1) ST7735 DS V2.1 page 115 : Interface Pixel Format
 	LCD_WriteData(0x66);    // 110bin in bits 2..0 switches to 18-bit/pixel
 	LCD_Delay(DLY_200ns);     // ?
-	nPixels = LCD_SetOutputRect(x1, y1, x2, y2); // send CASET,RASET
+	//nPixels = LCD_SetOutputRect(x1, y1, x2, y2); // send CASET,RASET
 	LCD_Delay(DLY_200ns);     // ?
 	LCD_WriteCommand(LCD_CMD_RAMRD); // ST7735 DS V2.1 page 105 : "Memory Read"
 	LCD_Delay(DLY_200ns);     // how long to wait after sending "RAMRD" ? 
@@ -430,7 +431,7 @@ int LCD_CopyRectFromFramebuffer_RGB( // Reads a rectangular area of pixels, 24 b
 							  //       Page 35, 'MCU Data Colour Coding for RAM data, READ' seems to confirm
 							  //       -similar to ST7735- an HX8353-E only supports reading 3 bytes/pixel .
 							  // READING pixels is *much* slower than writing. K6BSD reported 25 times slower.
-#if(0) // Without Tytera's strange display rotation and mirroring, we'd use this:
+#if 0 // Without Tytera's strange display rotation and mirroring, we'd use this:
 	while (nPixels--)
 	{
 		*pbDest++ = LCD_ReadData(); // 8 bit BLUE  (bits 1..0 unused)
@@ -495,7 +496,7 @@ int fixBoundsPointY(int pt) {
 }
 
 void LCD_DrawLine(int x1, int y1, int x2, int y2, uint16_t color) {
-	int tmp = 0;
+	//int tmp = 0;
 	x1 = fixBoundsPointX(x1);
 	x2 = fixBoundsPointX(x2);
 	y1 = fixBoundsPointX(y1);

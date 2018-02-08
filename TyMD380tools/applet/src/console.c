@@ -148,8 +148,8 @@ char small[MAX_BUF];
 #define bgcolor 0x00ff8032
 #define fgcolor 0xff000000
 #endif
-#define bgcolor 0x00000000
-#define fgcolor 0x00ffffff
+#define bgcolor 0x0000
+#define fgcolor 0xffff
 
 #define LEFT_POS 3
 
